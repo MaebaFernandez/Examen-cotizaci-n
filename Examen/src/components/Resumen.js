@@ -3,7 +3,8 @@ import{StyleSheet, Text , View,TextInput} from 'react-native';
 
 
 export default function Resumen(props){
-  const {SetCantidad, SetPrecioTotal}=props;
+  const {SetCantidad, SetPrecioTotal,NombreCliente,NombreProducto,Iva}=props;
+  console.log(NombreCliente);
 
     
     return(
@@ -15,12 +16,20 @@ export default function Resumen(props){
                     placeholder="Ingrese Cantidad" 
                     placeholderTextColor="#969696"
                     onChange= {(e) => SetCantidad(e.nativeEvent.text)}/>
-   
-              
-   
-              
 
-
+            <View style={estilo.rowInput}>
+               <Text  style={estilo.Labe} >Nombre del Cliente:  </Text>
+                 <Text  style={estilo.Labe} >{NombreCliente}</Text>
+            </View>
+            <View style={estilo.rowInput}>
+               <Text  style={estilo.Labe} >Nombre del Producto:  </Text>
+                 <Text  style={estilo.Labe} >{NombreProducto}</Text>
+            </View>
+            <View style={estilo.rowInput}>
+               <Text  style={estilo.Labe} >Iva del Producto:  </Text>
+                 <Text  style={estilo.Labe} >{Iva}</Text>
+            </View>
+                
               
         </View>
             

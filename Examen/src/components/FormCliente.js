@@ -59,7 +59,7 @@ export default function FormCliente(props){
             }
         ],
 
-        listaClientes: undefined,  
+        NombreCliente: undefined,  
         items3: [
             {
                 value: "Marco Marca",
@@ -67,8 +67,8 @@ export default function FormCliente(props){
             },
             {
                     
-                value: 'Eber',
-                label: 'Kachi'
+                value: 'Eber Kachi',
+                label: 'Eber Kachi'
             },
             {
                 value:  'Maeba',
@@ -97,12 +97,8 @@ export default function FormCliente(props){
                         value: null,
                     }}
                     items={state.items3}
-                    onValueChange={(value) => {
-                        SetNombreCliente({
-                            ListaClientes: value,
-                        });
-                    }}
-                    value={state.listaClientes}
+                    onValueChange={(value) => SetNombreCliente(value)}
+                    value={state.NombreCliente}
                     
                 />
 
@@ -114,11 +110,7 @@ export default function FormCliente(props){
                        value: null,
                    }}
                    items={state.items}
-                   onValueChange={(value) => {
-                       SetFormaPago({
-                          formaPago: value,
-                       });
-                   }}
+                   onValueChange={(value) => SetFormaPago(value)}
                    value={state.formaPago}
                    
                />
@@ -131,11 +123,7 @@ export default function FormCliente(props){
                        value: null,
                    }}
                    items={state.items1}
-                   onValueChange={(value) => {
-                       SetTipoRecibo({
-                          TipoRecibo: value,
-                       });
-                   }}
+                   onValueChange={(value) => SetTipoRecibo(value)}
                    value={state.TipoRecibo}
                    
                />
@@ -148,11 +136,7 @@ export default function FormCliente(props){
                        value: null,
                    }}
                    items={state.items2}
-                   onValueChange={(value) => {
-                       SetMoneda({
-                          Moneda: value,
-                       });
-                   }}
+                   onValueChange={(value) => SetMoneda(value)}
                    value={state.Moneda}
                    
                />

@@ -6,46 +6,68 @@ import RNPickerSelect from 'react-native-picker-select';
 export default function FormCliente(props){
    
     const {SetNombreProducto,SetPrecio,SetIva} = props;
+
+    
+      
     
     const state = {
         Productos: undefined,
         items:[{
             
             label: 'Calsados',
+            value:'Calsados',
             precio: '10',
             descripcion:'zapatos de varon',
-            value:'16'
+            iva:'16'
         },
         {
             
             label : 'blusas',
+            value:'blusas',
             precio: '16',
             descripcion:'ropa de mujer',
-            value :'10'
+            iva :'10'
         },
         {
            
             label : 'Pantalones',
+            value:'Pantalones',
             precio: '10',
             descripcion:'ropa de varon',
-            value :'3'
+            iva :'3'
         },
         {
             
             label : 'Vajillas',
+            value:'Vajillas',
             precio: '40',
             descripcion:'varios utencillos de cocina ',
-            value :'16'
+            iva :'16'
         },
         {
             
-            label : 'Teniz',
+            label : 'Tenis',
+            value:'Tenis',
             precio: '35',
             descripcion:'zapatillas deportivas para  mujer y varon',
-            value :'15'
+            iva :'15'
         }
     ]
     };
+
+    Object.values(state.items).map(e => 
+        
+            console.log(e)
+        
+        
+       );
+
+
+
+      
+     
+
+
 
 
     return (
@@ -61,20 +83,10 @@ export default function FormCliente(props){
                        value: null,
                    }}
                    items={state.items}
-                   onValueChange={(value,precio,label) => {
-                       SetIva({
-                        Productos: value,
-                       });
-                       SetPrecio({
-                        Precio: precio,
-                       });
-                       SetNombreProducto({
-                        NombreProducto: label,
-                       });
-                   }}
-                   value={state.Productos}
-                   precio ={state.Productos}
-                   label={state.Productos}
+                   
+                   onValueChange={(value) => SetNombreProducto(value),(iva) => SetIva(iva)}
+                   
+                   
 
                    
                />

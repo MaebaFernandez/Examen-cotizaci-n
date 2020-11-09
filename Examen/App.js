@@ -38,15 +38,25 @@ export default function App() {
     }
     else{
         console.log("Ok");
+  
         
     }
 
-    setTotalIva =()=>{
-      TotalIva= Cantidad*(Iva*Precio/100);
+    const IvaTotal=Cantidad*(Iva*Precio/100);
+    const precioTotal =Cantidad*Precio+TotalIva; 
 
-    } 
-    PrecioTotal =Cantidad*Precio+TotalIva; 
+    console.log(IvaTotal);
+    console.log(precioTotal);
+
+    SetTotalIva(IvaTotal);
+
+    SetPrecioTotal(precioTotal);
+      
+
+    
    
+    console.log(NombreCliente);
+    console.log(NombreProducto);
     console.log(Precio*Cantidad);
     console.log(TotalIva);
     console.log(PrecioTotal);
@@ -77,7 +87,7 @@ export default function App() {
             <Text style={styles.titulo1}>
                     descripcion </Text>
 
-            <Resumen SetCantidad={SetCantidad} SetPrecioTotal={SetPrecioTotal}/>
+            <Resumen SetCantidad={SetCantidad} SetPrecioTotal={SetPrecioTotal} NombreCliente={NombreCliente} NombreProducto={NombreProducto} Iva={Iva}/>
             
             <Footer calcular={calcularIva} />
               
